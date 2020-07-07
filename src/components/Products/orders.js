@@ -57,7 +57,7 @@ const Orders = () => {
           style={{
             width: "100%",
             position: "relative",
-            bottom: "5rem",
+            bottom: "2rem",
             padding: "2rem",
             // paddingLeft: "5vw",
           }}

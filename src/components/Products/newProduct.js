@@ -115,7 +115,7 @@ const NewProduct = () => {
             // height: "50vh",
             margin: "auto",
             position: "relative",
-            bottom: "5rem",
+            bottom: "2rem",
           }}
         >
           <Box display="flex" alignItems="center">
