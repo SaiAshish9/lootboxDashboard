@@ -81,7 +81,10 @@ function Navigator(props) {
           icon: <CategoryIcon />,
           active: history.location.pathname === "/categories",
           path: "/categories",
-          options: [],
+          options: [
+            {name:"Add Categories",path:"/categories"},
+            {name:"Add Sub Categories",path:"/categories/add/subcategory"}
+          ],
         },
         {
           id: "Notifications",
