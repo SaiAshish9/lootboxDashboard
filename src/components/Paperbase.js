@@ -39,6 +39,7 @@ let theme = createMuiTheme({
       fontSize: 26,
       letterSpacing: 0.5,
     },
+    fontFamily:"'Inter',sans-serif"
   },
   shape: {
     borderRadius: 8,
