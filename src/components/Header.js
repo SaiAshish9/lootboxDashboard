@@ -1,12 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
 import AppBar from "@material-ui/core/AppBar";
-import Grid from "@material-ui/core/Grid";
-import Hidden from "@material-ui/core/Hidden";
+// import Grid from "@material-ui/core/Grid";
+// import Hidden from "@material-ui/core/Hidden";
 import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import Toolbar from "@material-ui/core/Toolbar";
+// import MenuIcon from "@material-ui/icons/Menu";
+// import Toolbar from "@material-ui/core/Toolbar";
 import { withStyles } from "@material-ui/core/styles";
+import Box from "@material-ui/core/Box";
+import Typography from "@material-ui/core/Typography";
+import {Switch,Route} from 'react-router-dom'
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 
 const lightColor = "rgba(255, 255, 255, 0.7)";
 
@@ -46,24 +50,91 @@ function Header(props) {
           background: "#f5f5f5",
         }}
       >
-        <Toolbar>
-          <Grid container spacing={1} alignItems="center">
-            <Hidden smUp>
-              <Grid item>
-                <IconButton
-                  color="inherit"
-                  aria-label="open drawer"
-                  onClick={onDrawerToggle}
-                  className={classes.menuButton}
-                >
-                  <MenuIcon />
+        <Box
+          style={{ height: "8vh", padding: "0 20px" }}
+          display="flex"
+          alignItems="center"
+          justifyContent="space-between"
+        >
+          <Switch>
+            <Route exact path="/notifications">
+              <Box display="flex" alignItems="center">
+                <IconButton>
+                  <ArrowBackIcon />
                 </IconButton>
-              </Grid>
-            </Hidden>
-            <Grid item xs />
-            <Grid item></Grid>
-          </Grid>
-        </Toolbar>
+                <Typography
+                  style={{
+                    marginLeft: 10,
+                    fontWeight: "bold",
+                    color: "#515a63",
+                  }}
+                >
+                  ADD NOTIFICATION HERE
+                </Typography>
+              </Box>
+            </Route>
+            <Route exact path="/">
+              <Typography
+                style={{ marginLeft: 10, fontWeight: "bold", color: "#515a63" }}
+              >
+                HOME
+              </Typography>
+            </Route>
+            <Route exact path="/products">
+              <Typography
+                style={{ marginLeft: 10, fontWeight: "bold", color: "#515a63" }}
+              >
+                PRODUCTS
+              </Typography>
+            </Route>
+            <Route exact path="/products/detail">
+              <Typography
+                style={{ marginLeft: 10, fontWeight: "bold", color: "#515a63" }}
+              >
+                PRODUCT DETAIL
+              </Typography>
+            </Route>
+            <Route exact path="/product/new">
+              <Typography
+                style={{ marginLeft: 10, fontWeight: "bold", color: "#515a63" }}
+              >
+                NEW PRODUCT
+              </Typography>
+            </Route>
+            <Route exact path="/orders">
+              <Typography
+                style={{ marginLeft: 10, fontWeight: "bold", color: "#515a63" }}
+              >
+                ORDERS
+              </Typography>
+            </Route>
+            <Route exact path="/orders/detail">
+              <Typography
+                style={{ marginLeft: 10, fontWeight: "bold", color: "#515a63" }}
+              >
+                ORDERS DETAIL
+              </Typography>
+            </Route>
+            <Route exact path="/categories">
+              <Typography
+                style={{ marginLeft: 10, fontWeight: "bold", color: "#515a63" }}
+              >
+                ADD CATEGORIES
+              </Typography>
+            </Route>
+            <Route exact path="/categories/add/subcategory">
+              <Typography
+                style={{ marginLeft: 10, fontWeight: "bold", color: "#515a63" }}
+              >
+                ADD SUB CATEGORY
+              </Typography>
+            </Route>
+          </Switch>
+        </Box>
+
+        {/* <Grid > */}
+        {/* hi */}
+        {/* </Grid> */}
       </AppBar>
     </React.Fragment>
   );

@@ -108,6 +108,12 @@ function Navigator(props) {
     <Drawer variant="permanent" {...other}>
       <List disablePadding>
         <ListItem
+         onClick={()=>{
+           history.push('/')
+         }}
+         style={{
+           cursor:"pointer"
+         }}
           className={clsx(classes.firebase, classes.item, classes.itemCategory)}
         >
           Lootbox
