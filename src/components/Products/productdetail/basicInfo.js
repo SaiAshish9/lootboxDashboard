@@ -4,8 +4,10 @@ import Box from "@material-ui/core/Box";
 import Chip from "@material-ui/core/Chip"
 // import { Button } from '@material-ui/core';
 import {makeStyles} from '@material-ui/core/styles'
+import {connect} from 'react-redux'
+import {updateProductInfo} from '../../../redux/reducers/actionTypes'
 
-const BasicInfo = () => {
+const BasicInfo = ({updateProduct,products}) => {
 
 
 const styles = makeStyles({
@@ -24,6 +26,19 @@ const styles = makeStyles({
 });
 
 const classes=styles()
+
+
+
+const handleChange=e=>{
+  updateProduct({
+    key:e.target.name,
+    value:e.target.value
+  })
+}
+
+
+
+
     return (
       <Box style={{ padding: "2rem", minHeight: "65vh" }}>
         <TextField
@@ -31,7 +46,10 @@ const classes=styles()
           fullWidth
           variant="outlined"
           label="Name*"
+          name="name"
+          defaultValue={products[0]["name"]}
           //   placeholder="Name*"
+          onChange={handleChange}
         />
 
         <TextField
@@ -39,8 +57,11 @@ const classes=styles()
           rows={6}
           fullWidth
           variant="outlined"
+          name="description"
+          defaultValue={products[0]["description"]}
           label="Description"
           style={{ margin: "20px 0" }}
+          onChange={handleChange}
           //   placeholder="Name*"
         />
 
@@ -49,8 +70,10 @@ const classes=styles()
           placeholder="Select multiple categories"
           fullWidth
           variant="outlined"
-          // defaultValue={}
+          defaultValue={1}
+          name="categories"
           label="Categories"
+          onChange={handleChange}
           className={classes.root}
           SelectProps={{
             native: true,
@@ -72,6 +95,9 @@ const classes=styles()
           fullWidth
           variant="outlined"
           label="Tags"
+          defaultValue={1}
+          onChange={handleChange}
+          name="tags"
           SelectProps={{
             native: true,
           }}
@@ -88,4 +114,13 @@ const classes=styles()
     );
 }
 
-export default BasicInfo
+const mapDispatchToProps=dispatch=>({
+  updateProduct:payload=>dispatch(updateProductInfo(payload))
+})
+
+const mapStateToProps=state=>({
+  products:state.product.products
+})
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(BasicInfo)

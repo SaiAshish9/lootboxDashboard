@@ -5,8 +5,12 @@ import Table from "../../table";
 import Search from "../../search";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import {connect} from 'react-redux'
 
-const Products = () => {
+const Products = ({product}) => {
+
+console.log(product)
+
     return (
       <div>
         <Box
@@ -78,4 +82,8 @@ const Products = () => {
     );
 }
 
-export default Products
+const mapStateToProps=state=>({
+  product: state.product
+})
+
+export default connect(mapStateToProps)(Products)
