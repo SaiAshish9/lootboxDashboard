@@ -14,16 +14,26 @@ const styles = (theme) => ({
 
 });
 
+const Homepage=()=>(
+  <div style={{margin:'auto'}}>
+<h1>
+  Lootbox
+  Dashboard 
+</h1>
+  </div>
+)
+
 function Content(props) {
   // const { classes } = props;
   
   return (
    <Switch>
-     <Route  exact path="/" component={Products}/>
+     <Route exact path="/" component={Homepage}/> 
+     <Route  exact path="/products" component={Products}/>
      <Route  path="/products/detail" component={ProductDetail}/>
      <Route  path="/product/new" component={NewProduct}/>
-     <Route  path="/products/orders" component={Orders}/>
-     <Route  path="/products/orderDetails" component={OrderDetail}/>
+     <Route  exact path="/orders" component={Orders}/>
+     <Route  path="/orders/details" component={OrderDetail}/>
      <Route  path="/categories" component={Categories}/>
      <Route  path="/notifications" component={Notifications}/>
    </Switch>

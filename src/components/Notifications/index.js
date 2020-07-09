@@ -5,8 +5,21 @@ import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormControl from "@material-ui/core/FormControl";
 
 const Notifications = () => {
+
+
+  const [value, setValue] = React.useState("All");
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+
+
   return (
     <Box
       display="flex"
@@ -14,27 +27,28 @@ const Notifications = () => {
       justifyContent="space-between"
       style={{ width: "100%" }}
     >
-      <h1 style={{ paddingLeft: "5rem" }}>Add Product</h1>
+      {/* <h1 style={{ paddingLeft: "5rem" }}>Add Product</h1> */}
       <Box
         display="flex"
         justifyContent="space-between"
         alignItems="center"
         style={{
-          padding: "5rem",
+          padding: "2rem 5rem",
+          paddingBottom: "1rem",
         }}
       >
         <Typography
           style={{
             color: "#2c2c2c",
-            width: "40%",
+            width: "60%",
             alignSelf: "flex-start",
             fontWeight: 600,
           }}
         >
-          Upload your Product Image here
+          Upload your Notifcation / Image here
         </Typography>
-        <Box style={{ width: "60%" }}>
-          <DropzoneArea />
+        <Box style={{ width: "40%" }}>
+          <DropzoneArea style={{ height: "10rem" }} />
         </Box>
       </Box>
 
@@ -43,57 +57,86 @@ const Notifications = () => {
         justifyContent="space-between"
         alignItems="center"
         style={{
-          padding: "2rem 5rem",
+          padding: "1rem 5rem",
         }}
       >
         <Typography
           style={{
             color: "#2c2c2c",
-            width: "40%",
+            width: "60%",
             alignSelf: "flex-start",
             fontWeight: 600,
           }}
         >
-          Upload your Product Image here
+          Add your notification / description & essential information here
         </Typography>
-        <Box style={{ width: "60%" }}>
+        <Box style={{ width: "40%" }}>
           <Paper
             elevation={0}
             style={{
               width: "100%",
               borderRadius: "0px",
-              padding: "3rem",
+              padding: "1rem",
             }}
           >
-            <Typography variant="contained" component="h2">
-              Name
-            </Typography>
             <TextField
-              variant="filled"
+              variant="outlined"
+              label="Title"
               fullWidth
-              style={{ margin: "20px 0" }}
+              style={{ margin: "10px 0" }}
             />
-            <Typography variant="contained" component="h2">
-              Description
-            </Typography>
             <TextField
-              variant="filled"
+              variant="outlined"
               multiline
-              rows={7}
+              label="Description"
+              rows={5}
               fullWidth
-              style={{ margin: "20px 0" }}
-            />
-            <Typography variant="contained" component="h2">
-              Unit
-            </Typography>
-            <TextField
-              variant="filled"
-              fullWidth
-              style={{ margin: "20px 0" }}
+              style={{ margin: "10px 0" }}
             />
           </Paper>
         </Box>
       </Box>
+      <Box
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center"
+        style={{
+          padding: "0.3rem 5rem",
+          width:"70%"
+        }}
+      >
+        <Typography
+          style={{
+            color: "#2c2c2c",
+            width: "30%",
+            alignSelf: "flex-start",
+            fontWeight: 600,
+          }}
+        >
+          Select Users :
+        </Typography>
+
+        <FormControl component="fieldset">
+          <RadioGroup
+            row
+            value={value}
+            onChange={handleChange}
+          >
+            <FormControlLabel
+              value="All"
+              control={<Radio />}
+              label="All Users"
+              style={{marginRight:"7rem"}}
+            />
+            <FormControlLabel
+              value="Selected"
+              control={<Radio />}
+              label="Selected Users"
+            />
+          </RadioGroup>
+        </FormControl>
+      </Box>
+
       <Box
         display="flex"
         alignItems="center"
@@ -103,14 +146,14 @@ const Notifications = () => {
           position: "relative",
           top: "2rem",
           background: "#fff",
-          padding: "3rem 5rem",
+          padding: "0.5rem 5rem",
         }}
       >
         <Button
           style={{
             fontWeight: "bold",
             color: "red",
-            width: "30rem",
+            width: "50%",
             padding: 10,
             borderRadius: 0,
           }}
@@ -123,7 +166,7 @@ const Notifications = () => {
           style={{
             fontWeight: "bold",
             color: "#fff",
-            width: "30rem",
+            width: "50%",
             padding: 10,
             borderRadius: 0,
             background: "#2c2c2c",

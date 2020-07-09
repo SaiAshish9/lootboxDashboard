@@ -8,13 +8,13 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import HomeIcon from "@material-ui/icons/Home";
 import ShoppingBasketOutlinedIcon from "@material-ui/icons/ShoppingBasketOutlined";
 import CategoryIcon from "@material-ui/icons/Category";
 import NotificationsNoneIcon from "@material-ui/icons/NotificationsNone";
 import { withRouter } from "react-router-dom";
 import TreeView from "@material-ui/lab/TreeView";
 import TreeItem from "@material-ui/lab/TreeItem";
+import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 
 const styles = (theme) => ({
   categoryHeader: {
@@ -67,14 +67,21 @@ function Navigator(props) {
         {
           id: "Products",
           icon: <ShoppingBasketOutlinedIcon />,
-          active: history.location.pathname === "/",
-          path: "/",
+          active: history.location.pathname === "/products",
+          path: "/products",
           options: [
             { name: "Product Detail", path: "/products/detail" },
             { name: "New Product", path: "/product/new" },
-            { name: "Orders", path: "/products/orders" },
-            { name: "Orders Detail", path: "/products/orderDetails" },
           ],
+        },
+        {
+          id:"Orders",
+          path:"/orders",
+          icon:<AddShoppingCartIcon/>,
+          active: history.location.pathname === "/orders",
+          options:[
+            { name: "Orders Detail", path: "/orders/details" },
+          ]
         },
         {
           id: "Categories",
@@ -105,18 +112,18 @@ function Navigator(props) {
         >
           Lootbox
         </ListItem>
-        <ListItem className={clsx(classes.item, classes.itemCategory)}>
+        {/* <ListItem className={clsx(classes.item, classes.itemCategory)}>
           <ListItemIcon className={classes.itemIcon}>
             <HomeIcon />
           </ListItemIcon>
-          <ListItemText
+           <ListItemText
             classes={{
               primary: classes.itemPrimary,
             }}
           >
             Project Overview
-          </ListItemText>
-        </ListItem>
+          </ListItemText> 
+        </ListItem> */}
         {categories.map(({ id, children }) => (
           <React.Fragment key={id}>
             <ListItem className={classes.categoryHeader}>
