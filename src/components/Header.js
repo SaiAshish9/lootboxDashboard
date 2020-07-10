@@ -59,6 +59,19 @@ function Header(props) {
           <Switch>
             <Route exact path="/notifications">
               <Box display="flex" alignItems="center">
+                <Typography
+                  style={{
+                    marginLeft: 10,
+                    fontWeight: "bold",
+                    color: "#515a63",
+                  }}
+                >
+                  ALL NOTIFICATIONS
+                </Typography>
+              </Box>
+            </Route>
+            <Route exact path="/notifications/new">
+              <Box display="flex" alignItems="center">
                 <IconButton>
                   <ArrowBackIcon />
                 </IconButton>

@@ -9,6 +9,7 @@ import ProductDetail from "./Products/productDetail"
 import NewProduct from "./Products/newProduct"
 import Orders from "./Products/orders"
 import OrderDetail from "./Products/orderDetail"
+import AllNotifications from "./Notifications/AllNotifications"
 
 const styles = (theme) => ({
 
@@ -35,7 +36,8 @@ function Content(props) {
      <Route  exact path="/orders" component={Orders}/>
      <Route  path="/orders/details" component={OrderDetail}/>
      <Route  path="/categories" component={Categories}/>
-     <Route  path="/notifications" component={Notifications}/>
+     <Route  exact path="/notifications" component={AllNotifications}/>
+     <Route  path="/notifications/new" component={Notifications}/>
    </Switch>
   );
 }

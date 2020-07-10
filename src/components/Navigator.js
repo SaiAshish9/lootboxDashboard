@@ -98,7 +98,16 @@ function Navigator(props) {
           icon: <NotificationsNoneIcon />,
           active: history.location.pathname === "/notifications",
           path: "/notifications",
-          options: [],
+          options: [
+            {
+              name:"All notifications",
+              path:"/notifications"
+            },
+            {
+              name:"Add New Notification",
+              path:"/notifications/new"
+            }
+          ],
         },
       ],
     },
