@@ -1,9 +1,8 @@
 import React from "react";
 import Box from "@material-ui/core/Box";
-import Table from './notificationsTable'
+import Table from "./usersTable";
 
-const AllNotifications = () => {
-
+const Users = () => {
   return (
     <div>
       <Box
@@ -76,4 +75,4 @@ const AllNotifications = () => {
   );
 };
 
-export default AllNotifications;
+export default Users;

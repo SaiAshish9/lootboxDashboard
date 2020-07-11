@@ -15,6 +15,7 @@ import { withRouter } from "react-router-dom";
 import TreeView from "@material-ui/lab/TreeView";
 import TreeItem from "@material-ui/lab/TreeItem";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
+import PeopleIcon from '@material-ui/icons/People';
 
 const styles = (theme) => ({
   categoryHeader: {
@@ -109,6 +110,17 @@ function Navigator(props) {
             }
           ],
         },
+        {
+          id:"Users",
+          icon:<PeopleIcon />,
+          active:history.location.pathname === "/users",
+          options:[
+            {
+              name:"All users",
+              path:"/users"
+            }
+          ]
+        }
       ],
     },
   ];

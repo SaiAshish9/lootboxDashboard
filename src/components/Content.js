@@ -10,6 +10,7 @@ import NewProduct from "./Products/newProduct"
 import Orders from "./Products/orders"
 import OrderDetail from "./Products/orderDetail"
 import AllNotifications from "./Notifications/AllNotifications"
+import Users from "./Users"
 
 const styles = (theme) => ({
 
@@ -28,17 +29,18 @@ function Content(props) {
   // const { classes } = props;
   
   return (
-   <Switch>
-     <Route exact path="/" component={Homepage}/> 
-     <Route  exact path="/products" component={Products}/>
-     <Route  path="/products/detail" component={ProductDetail}/>
-     <Route  path="/product/new" component={NewProduct}/>
-     <Route  exact path="/orders" component={Orders}/>
-     <Route  path="/orders/details" component={OrderDetail}/>
-     <Route  path="/categories" component={Categories}/>
-     <Route  exact path="/notifications" component={AllNotifications}/>
-     <Route  path="/notifications/new" component={Notifications}/>
-   </Switch>
+    <Switch>
+      <Route exact path="/" component={Homepage} />
+      <Route exact path="/products" component={Products} />
+      <Route path="/products/detail" component={ProductDetail} />
+      <Route path="/product/new" component={NewProduct} />
+      <Route exact path="/orders" component={Orders} />
+      <Route path="/orders/details" component={OrderDetail} />
+      <Route path="/categories" component={Categories} />
+      <Route exact path="/notifications" component={AllNotifications} />
+      <Route path="/notifications/new" component={Notifications} />
+      <Route exact path="/users" component={Users} />
+    </Switch>
   );
 }
 

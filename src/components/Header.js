@@ -100,6 +100,13 @@ function Header(props) {
                 PRODUCTS
               </Typography>
             </Route>
+            <Route exact path="/users">
+              <Typography
+                style={{ marginLeft: 10, fontWeight: "bold", color: "#515a63" }}
+              >
+                ALL USERS
+              </Typography>
+            </Route>
             <Route exact path="/products/detail">
               <Typography
                 style={{ marginLeft: 10, fontWeight: "bold", color: "#515a63" }}
