@@ -44,8 +44,8 @@ function Content({currentUser}) {
 
   return (
     <Switch>
-      <Route exact path="/" component={Homepage} />
-      <Route exact path="/dashboard">
+      {/* <Route exact path="/" component={Homepage} /> */}
+      <Route exact path="/">
         <Dashboard user={currentUser.user} />
       </Route>
       <Route exact path="/products" component={Products} />

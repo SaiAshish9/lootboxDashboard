@@ -178,7 +178,7 @@ function Paperbase(props) {
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
         <CssBaseline />
-        {history.location.pathname !== "/" && (
+        {history.location.pathname !== "/dashboard" && (
           <nav className={classes.drawer}>
             <Hidden smUp implementation="js">
               <Navigator
