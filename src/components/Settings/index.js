@@ -81,7 +81,7 @@ const Users = ({users, dispatch}) => {
             width: "70vw",
             margin: "auto",
             position: "relative",
-            bottom: "9rem",
+            bottom: "2rem",
           }}
         >
           <Table
