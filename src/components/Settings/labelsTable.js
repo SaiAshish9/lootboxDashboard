@@ -84,7 +84,7 @@ useEffect(()=>{
                 <StyledTableCell>عربى</StyledTableCell>
                 <StyledTableCell>
                   <IconButton>
-                    <EditIcon/>
+                    <EditIcon />
                   </IconButton>
                 </StyledTableCell>
               </StyledTableRow>
@@ -95,9 +95,9 @@ useEffect(()=>{
       <TablePagination
         rowsPerPageOptions={[5, 10, 25]}
         component="div"
-        count={20}
-        rowsPerPage={10}
-        page={1}
+        count={5}
+        rowsPerPage={5}
+        page={0}
         //   onChangePage={handleChangePage}
         //   onChangeRowsPerPage={handleChangeRowsPerPage}
       />

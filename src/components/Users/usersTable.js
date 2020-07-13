@@ -92,29 +92,27 @@ useEffect(()=>{
                   {usr["active"] === false && (
                     <p
                       onClick={() => {
-                        dispatch(
-                          toggleUserStatus(usr.sno)
-                          );
+                        dispatch(toggleUserStatus(usr.sno));
                         // console.log(users[0]["active"]);
                         // console.log(usr['active']);
                         // forceUpdate()
-                        history.push("/products")
+                        history.push("/products");
                         history.push("/users");
                       }}
                       style={{ color: "red", cursor: "pointer" }}
                     >
                       InActive
                     </p>
-                  )} 
-                  {usr['active']===true && (
+                  )}
+                  {usr["active"] === true && (
                     <p
                       onClick={() => {
-                        dispatch(toggleUserStatus(usr.sno))
+                        dispatch(toggleUserStatus(usr.sno));
                         // forceUpdate()
                         // console.log(users[0]["active"]);
                         // history.push("/users");
-                           history.push("/products");
-                           history.push("/users");
+                        history.push("/products");
+                        history.push("/users");
                       }}
                       style={{ color: "green", cursor: "pointer" }}
                     >
@@ -140,13 +138,12 @@ useEffect(()=>{
       <TablePagination
         rowsPerPageOptions={[5, 10, 25]}
         component="div"
-        count={20}
-        rowsPerPage={10}
-        page={1}
+        count={5}
+        rowsPerPage={5}
+        page={0}
         //   onChangePage={handleChangePage}
         //   onChangeRowsPerPage={handleChangeRowsPerPage}
       />
-     
     </React.Fragment>
   );
 }
