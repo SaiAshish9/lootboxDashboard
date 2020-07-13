@@ -21,3 +21,9 @@ export const blockUser=sno=>({
     type:"BLOCK_USER",
     payload:sno
 })
+
+export const setCurrentUser=user=>({
+   type:'SET_CURRENT_USER',
+   payload:user
+})
+

@@ -6,11 +6,12 @@ import orderReducer from './reducers/order-reducer'
 import categoryReducer from './reducers/category-reducer'
 import notificationReducer from './reducers/notification-reducer'
 import usersReducer from './reducers/users-reducer'
+import authReducer from './reducers/auth_reducer'
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["product","order","users"],
+  whitelist: ["product","order","users","auth"],
 };
 
 export const rootReducer=combineReducers({
@@ -19,6 +20,7 @@ export const rootReducer=combineReducers({
     category:categoryReducer,
     notification:notificationReducer,
     users:usersReducer,
+    auth:authReducer,
 })
 
 export default persistReducer(persistConfig,rootReducer)
