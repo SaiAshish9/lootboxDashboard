@@ -12,7 +12,7 @@ import OrderDetail from "./Products/orderDetail";
 import AllNotifications from "./Notifications/AllNotifications";
 import Users from "./Users";
 import Settings from "./Settings";
-import Homepage from "./Homepage";
+// import Homepage from "./Homepage";
 import Snackbar from "@material-ui/core/Snackbar";
 import {connect} from 'react-redux'
 
