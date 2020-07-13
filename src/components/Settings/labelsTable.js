@@ -8,9 +8,9 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import TablePagination from "@material-ui/core/TablePagination";
-import InfoIcon from "@material-ui/icons/InfoOutlined";
-import {useHistory} from 'react-router-dom'
-
+// import {useHistory} from 'react-router-dom'
+import EditIcon from "@material-ui/icons/Edit";
+import IconButton from "@material-ui/core/IconButton";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -50,7 +50,7 @@ const useStyles = makeStyles({
 
  function CustomizedTables({users,dispatch,toggleUserStatus}) {
   const classes = useStyles();
- const history=useHistory();
+//  const history=useHistory();
    const [users1, setUsers] = useState(users);
 
 
@@ -68,13 +68,10 @@ useEffect(()=>{
         <Table className={classes.table} aria-label="customized table">
           <TableHead>
             <TableRow>
-              <StyledTableCell>Serial Number</StyledTableCell>
-              <StyledTableCell>Username</StyledTableCell>
-              <StyledTableCell>Email Id</StyledTableCell>
-              <StyledTableCell>Mobile No:</StyledTableCell>
-              <StyledTableCell>CreatedOn_Date</StyledTableCell>
-              <StyledTableCell>Status</StyledTableCell>
-              <StyledTableCell></StyledTableCell>
+              <StyledTableCell>Key</StyledTableCell>
+              <StyledTableCell>Name</StyledTableCell>
+              <StyledTableCell>عربى</StyledTableCell>
+              <StyledTableCell>Action</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -84,53 +81,11 @@ useEffect(()=>{
                 <StyledTableCell component="th" scope="row">
                   {usr.username}
                 </StyledTableCell>
-                <StyledTableCell>{usr.email}</StyledTableCell>
-                <StyledTableCell>{usr.phoneno}</StyledTableCell>
-                <StyledTableCell>{usr.createdOn}</StyledTableCell>
+                <StyledTableCell>عربى</StyledTableCell>
                 <StyledTableCell>
-                  {/* {usr.active.toString()} */}
-                  {usr["active"] === false && (
-                    <p
-                      onClick={() => {
-                        dispatch(
-                          toggleUserStatus(usr.sno)
-                          );
-                        // console.log(users[0]["active"]);
-                        // console.log(usr['active']);
-                        // forceUpdate()
-                        history.push("/products")
-                        history.push("/users");
-                      }}
-                      style={{ color: "red", cursor: "pointer" }}
-                    >
-                      InActive
-                    </p>
-                  )} 
-                  {usr['active']===true && (
-                    <p
-                      onClick={() => {
-                        dispatch(toggleUserStatus(usr.sno))
-                        // forceUpdate()
-                        // console.log(users[0]["active"]);
-                        // history.push("/users");
-                           history.push("/products");
-                           history.push("/users");
-                      }}
-                      style={{ color: "green", cursor: "pointer" }}
-                    >
-                      Active
-                    </p>
-                  )}
-                </StyledTableCell>
-                <StyledTableCell>
-                  {usr.blocked && (
-                    <InfoIcon
-                      style={{
-                        // color: "green",
-                        cursor: "pointer",
-                      }}
-                    />
-                  )}
+                  <IconButton>
+                    <EditIcon/>
+                  </IconButton>
                 </StyledTableCell>
               </StyledTableRow>
             ))}
@@ -146,7 +101,6 @@ useEffect(()=>{
         //   onChangePage={handleChangePage}
         //   onChangeRowsPerPage={handleChangeRowsPerPage}
       />
-     
     </React.Fragment>
   );
 }

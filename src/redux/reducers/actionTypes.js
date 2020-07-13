@@ -7,3 +7,17 @@ export const addOrderProduct=item=>({
     type:'ADD_ORDER_PRODUCT',
     payload:item
 })
+
+export const toggleUserStatus=sno=>{
+    return dispatch=>{
+        dispatch({
+          type: "TOGGLE_USER_STATUS",
+          payload: sno,
+        });
+    }
+}
+
+export const blockUser=sno=>({
+    type:"BLOCK_USER",
+    payload:sno
+})

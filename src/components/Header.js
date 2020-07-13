@@ -90,7 +90,7 @@ function Header(props) {
               <Typography
                 style={{ marginLeft: 10, fontWeight: "bold", color: "#515a63" }}
               >
-                HOME
+                LOOTBOX
               </Typography>
             </Route>
             <Route exact path="/products">
@@ -105,6 +105,13 @@ function Header(props) {
                 style={{ marginLeft: 10, fontWeight: "bold", color: "#515a63" }}
               >
                 ALL USERS
+              </Typography>
+            </Route>
+            <Route exact path="/settings">
+              <Typography
+                style={{ marginLeft: 10, fontWeight: "bold", color: "#515a63" }}
+              >
+                SETTINGS
               </Typography>
             </Route>
             <Route exact path="/products/detail">

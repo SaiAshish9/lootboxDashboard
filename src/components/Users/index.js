@@ -1,8 +1,23 @@
 import React from "react";
 import Box from "@material-ui/core/Box";
 import Table from "./usersTable";
+import { connect } from "react-redux";
+import { toggleUserStatus } from "../../redux/reducers/actionTypes";
+// import {useHistory}  from 'react-router-dom'
+import { createStructuredSelector } from "reselect";
+import { selectUsers } from "../../redux/reducers/selectors";
 
-const Users = () => {
+const Users = ({users, dispatch}) => {
+
+
+
+
+
+
+
+
+
+
   return (
     <div>
       <Box
@@ -30,7 +45,11 @@ const Users = () => {
             bottom: "9rem",
           }}
         >
-          <Table />
+          <Table 
+          users={users}
+          dispatch={dispatch}
+          toggleUserStatus={toggleUserStatus}
+          />
         </Box>
 
         {/* 
@@ -75,4 +94,8 @@ const Users = () => {
   );
 };
 
-export default Users;
+const mapStateToProps = createStructuredSelector({
+  users: selectUsers,
+});
+
+export default connect(mapStateToProps)(Users);

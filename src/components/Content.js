@@ -11,12 +11,14 @@ import Orders from "./Products/orders"
 import OrderDetail from "./Products/orderDetail"
 import AllNotifications from "./Notifications/AllNotifications"
 import Users from "./Users"
+import Settings from "./Settings";
+import Homepage from "./Homepage"
 
 const styles = (theme) => ({
 
 });
 
-const Homepage=()=>(
+const Dashboard=()=>(
   <div style={{margin:'auto'}}>
 <h1>
   Lootbox
@@ -31,6 +33,7 @@ function Content(props) {
   return (
     <Switch>
       <Route exact path="/" component={Homepage} />
+      <Route exact path="/dashboard" component={Dashboard} />
       <Route exact path="/products" component={Products} />
       <Route path="/products/detail" component={ProductDetail} />
       <Route path="/product/new" component={NewProduct} />
@@ -40,6 +43,7 @@ function Content(props) {
       <Route exact path="/notifications" component={AllNotifications} />
       <Route path="/notifications/new" component={Notifications} />
       <Route exact path="/users" component={Users} />
+      <Route exact path="/settings" component={Settings} />
     </Switch>
   );
 }

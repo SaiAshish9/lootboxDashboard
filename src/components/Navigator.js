@@ -16,6 +16,7 @@ import TreeView from "@material-ui/lab/TreeView";
 import TreeItem from "@material-ui/lab/TreeItem";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import PeopleIcon from '@material-ui/icons/People';
+import SettingsIcon from "@material-ui/icons/Settings";
 
 const styles = (theme) => ({
   categoryHeader: {
@@ -76,13 +77,11 @@ function Navigator(props) {
           ],
         },
         {
-          id:"Orders",
-          path:"/orders",
-          icon:<AddShoppingCartIcon/>,
+          id: "Orders",
+          path: "/orders",
+          icon: <AddShoppingCartIcon />,
           active: history.location.pathname === "/orders",
-          options:[
-            { name: "Orders Detail", path: "/orders/details" },
-          ]
+          options: [{ name: "Orders Detail", path: "/orders/details" }],
         },
         {
           id: "Categories",
@@ -90,8 +89,8 @@ function Navigator(props) {
           active: history.location.pathname === "/categories",
           path: "/categories",
           options: [
-            {name:"Add Categories",path:"/categories"},
-            {name:"Add Sub Categories",path:"/categories/add/subcategory"}
+            { name: "Add Categories", path: "/categories" },
+            { name: "Add Sub Categories", path: "/categories/add/subcategory" },
           ],
         },
         {
@@ -101,26 +100,37 @@ function Navigator(props) {
           path: "/notifications",
           options: [
             {
-              name:"All notifications",
-              path:"/notifications"
+              name: "All notifications",
+              path: "/notifications",
             },
             {
-              name:"Add New Notification",
-              path:"/notifications/new"
-            }
+              name: "Add New Notification",
+              path: "/notifications/new",
+            },
           ],
         },
         {
-          id:"Users",
-          icon:<PeopleIcon />,
-          active:history.location.pathname === "/users",
-          options:[
+          id: "Users",
+          icon: <PeopleIcon />,
+          active: history.location.pathname === "/users",
+          options: [
             {
-              name:"All users",
-              path:"/users"
-            }
-          ]
-        }
+              name: "All users",
+              path: "/users",
+            },
+          ],
+        },
+        {
+          id: "Settings",
+          icon: <SettingsIcon />,
+          active: history.location.pathname === "/settings",
+          options: [
+            {
+              name: "Labels",
+              path: "/settings",
+            },
+          ],
+        },
       ],
     },
   ];
