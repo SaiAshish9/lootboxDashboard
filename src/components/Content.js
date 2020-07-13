@@ -24,17 +24,18 @@ const Dashboard = ({user}) => {
   return (
     <div style={{ margin: "auto" }}>
       <h1>Lootbox Dashboard</h1>
-      {user && (
+      {/* {!user && ( */}
         <Snackbar
           anchorOrigin={{ vertical: "top", horizontal: "center" }}
           open={open}
           onClose={() => {
             setOpen(false);
           }}
-          message={`Welcome Back ${user.first_name}`}
+          // message={`Welcome Back ${user.first_name}`}
+          message={'Welcome Back Admin'} 
           autoHideDuration={2000}
         />
-      )}
+      {/* )} */}
     </div>
   );
 };
